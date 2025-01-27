@@ -1,4 +1,10 @@
 export const badgeVariants = ["pill", "square"];
+
+export const badgeVariantClasses = {
+  pill: "rounded-full",
+  square: "rounded",
+};
+
 export const badgeColors = [
   "gray",
   "red",
@@ -12,7 +18,7 @@ export const badgeColors = [
 
 export const badgeColorClasses = {
   gray: {
-    bg: "bg-gray-100",
+    background: "bg-gray-100",
     text: "text-gray-800",
   },
   red: {
@@ -44,3 +50,5 @@ export const badgeColorClasses = {
     text: "text-pink-800",
   },
 };
+
+export const badgeBaseClass = "px-3 py-1 text-base font-medium";

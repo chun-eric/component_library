@@ -8,28 +8,39 @@ import Menu from "./components/navigation/Menu";
 import MenuDropdown from "./components/navigation/MenuDropdown";
 import MenuButton from "./components/navigation/MenuButton";
 import Badge from "./components/badges/Badge";
+import { badgeVariants, badgeColors } from "./data/badgeData";
 
 function App() {
   console.log("App rendering");
 
   return (
     <div className='dark-theme'>
-      {/* Star Toggle */}
       <div className='flex h-[60px]'></div>
+      <h1 className='mb-4 text-3xl font-bold tracking-wide text-black uppercase'>
+        Frontend Component Library
+      </h1>
+      {/* Gap */}
+      <div className='flex h-[60px]'></div>
+      {/* Star Toggle */}
+      <h2 className='mb-4 text-xl font-bold text-black uppercase'>Star</h2>
       <StarToggle />
 
-      {/* Menu Nav */}
+      {/* Gap */}
       <div className='flex h-[60px]'></div>
+
+      {/* Menu Nav */}
+      <h2 className='mb-4 text-xl font-bold text-black uppercase'>Menu</h2>
       <Menu onOpen={() => console.log("first render")}>
         <MenuButton>Menu</MenuButton>
         <MenuDropdown />
       </Menu>
 
       {/* Gap */}
-      <div className='flex h-[260px]'></div>
+      <div className='flex h-[300px]'></div>
 
       {/* Avatars */}
-      <div className='flex flex-col gap-2 p-4 bg-gray-100 border border-black rounded'>
+      <h2 className='mb-4 text-xl font-bold text-black uppercase'>Avatars</h2>
+      <div className='flex flex-col gap-2 p-4 '>
         {/* Photo Variants */}
         <div className='flex items-end gap-4'>
           {avatarSizes.map((size) => (
@@ -69,10 +80,28 @@ function App() {
       </div>
 
       {/* Gap */}
-      <div className='flex h-[260px]'></div>
+      <div className='flex h-[60px]'></div>
 
       {/* Badges */}
-      <Badge>Badge</Badge>
+      <h2 className='mb-4 text-xl font-bold text-black uppercase'>Badges</h2>
+      <div className='flex flex-col gap-4'>
+        {badgeVariants.map((variant) => (
+          <div key={variant} className='flex gap-3 cursor-pointer'>
+            {badgeColors.map((color) => (
+              <Badge
+                key={`${variant}-${color}`}
+                variant={variant}
+                color={color}
+              >
+                Badge
+              </Badge>
+            ))}
+          </div>
+        ))}
+      </div>
+
+      {/* Gap */}
+      <div className='flex h-[60px]'></div>
     </div>
   );
 }

@@ -13,7 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #2f2f2f;
+  background-color: #ffffff;
 }
 
 button.button-small {
@@ -191,7 +191,7 @@ button.warning {
   width: 30px;
   cursor: pointer;
   user-select: none;
-  color: white;
+  color: rgb(71, 71, 71);
   transition: opacity 0.2s ease-in-out;
 }
 
