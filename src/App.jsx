@@ -9,6 +9,14 @@ import MenuDropdown from "./components/navigation/MenuDropdown";
 import MenuButton from "./components/navigation/MenuButton";
 import Badge from "./components/badges/Badge";
 import { badgeVariants, badgeColors } from "./data/badgeData";
+import {
+  bannerVariants,
+  bannerTypes,
+  bannerSizeClasses,
+  bannerTypeClasses,
+  bannerContent,
+} from "./data/bannerData";
+import Banner from "./components/banner/Banner";
 
 function App() {
   console.log("App rendering");
@@ -98,6 +106,31 @@ function App() {
             ))}
           </div>
         ))}
+      </div>
+
+      {/* Gap */}
+      <div className='flex h-[60px]'></div>
+
+      {/* Banners */}
+      <h2 className='mb-4 text-xl font-bold text-black uppercase'>Banners</h2>
+      <div className='flex flex-col gap-12 '>
+        {/* Multi Line Column */}
+        <div className='space-y-4'>
+          <h3 className='mb-4 text-lg font-semibold text-black'>Multi-Line</h3>
+          {bannerTypes.map((type) => (
+            <Banner key={`${type}`} variant='multi' type={type}>
+              {}
+            </Banner>
+          ))}
+        </div>
+
+        {/* Single Line Column */}
+        <div className='space-y-4'>
+          <h3 className='mb-4 text-lg font-semibold text-black'>Single-Line</h3>
+          {bannerTypes.map((type) => (
+            <Banner key={`${type}`} variant='single' type={type}></Banner>
+          ))}
+        </div>
       </div>
 
       {/* Gap */}
